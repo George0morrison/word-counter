@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word Counter</title>
+<style>
+body{font-family:Arial;background:#f5f3ff;padding:25px}
+main{max-width:700px;margin:auto;background:white;padding:25px;border-radius:16px}
+textarea{width:100%;height:220px;padding:15px;box-sizing:border-box;border:1px solid #c4b5fd;border-radius:8px;resize:vertical}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:20px}
+.card{background:#ede9fe;padding:20px;border-radius:10px;text-align:center}
+strong{display:block;font-size:28px;color:#7c3aed;margin:8px}
+button{background:#7c3aed;color:white;border:0;padding:12px 20px;border-radius:6px;margin-top:20px;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+<h1>Word Counter</h1>
+<p>Analyze your writing instantly.</p>
+<textarea id="text" placeholder="Start typing here..." oninput="analyze()"></textarea>
+<div class="stats">
+<div class="card">Words<strong id="words">0</strong></div>
+<div class="card">Characters<strong id="characters">0</strong></div>
+<div class="card">Sentences<strong id="sentences">0</strong></div>
+<div class="card">Reading Time<strong id="time">0 sec</strong></div>
+</div>
+<button onclick="clearText()">Clear Text</button>
+</main>
+<script>
+function analyze(){
+ const text=document.getElementById("text").value;
+ const words=text.trim()?text.trim().split(/\s+/).length:0;
+ const sentences=text.split(/[.!?।]+/).filter(s=>s.trim()).length;
+ document.getElementById("words").textContent=words;
+ document.getElementById("characters").textContent=[...text].length;
+ document.getElementById("sentences").textContent=sentences;
+ document.getElementById("time").textContent=Math.ceil(words/200*60)+" sec";
+}
+function clearText(){
+ document.getElementById("text").value="";
+ analyze();
+}
+</script>
+</body>
+</html>
