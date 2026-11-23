@@ -1,24 +1,23 @@
-# Word Counter
+## Text Analysis Guide
 
-A lightweight application for analyzing written text.
+The Word Counter helps users analyze
+written text quickly.
 
-## Features
+### Text Statistics
 
-- Word counting
-- Character counting
-- Sentence counting
-- Reading time estimation
+- Total word count
+- Character count
+- Sentence count
+- Estimated reading time
 
-## How to Use
+### How to Use
 
-Enter text to view the statistics instantly.
+1. Open the application.
+2. Enter or paste your text.
+3. Review the calculated statistics.
+4. Edit the text to update the results.
 
-## Technologies
+### Development Notes
 
-- HTML
-- CSS
-- JavaScript
-
-## Running Locally
-
-Open `index.html` in a modern web browser.
+Keep the counting logic accurate
+and handle empty text properly.
