@@ -21,3 +21,12 @@ written text quickly.
 
 Keep the counting logic accurate
 and handle empty text properly.
+## Manual Testing Checklist
+
+- [ ] Enter a short sentence and verify the word count.
+- [ ] Compare character counts with and without spaces.
+- [ ] Clear the text and check that the statistics reset.
+
+### Test Notes
+
+Record the observed result and any reproducible issue after running the tests.
